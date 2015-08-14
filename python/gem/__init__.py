@@ -956,14 +956,35 @@ def bamIndex(input, output=None):
     in_name = input
     if not isinstance(input, basestring):
         in_name = input.filename
+    #bam_p = ['samtools', 'index', in_name]
+    #if output is None:
+    #    output = in_name + ".bai"
+    #bam_p.append(output)
+    #tools = [bam_p]
+    #process = utils.run_tools(tools, input=None, output=None, name="BAM-Index")
+    #if process.wait() != 0:
+    #    raise ValueError("BAM indexing failed!")
+    
     bam_p = ['samtools', 'index', in_name]
-    if output is None:
-        output = in_name + ".bai"
-    bam_p.append(output)
+    
+    #if output is None:
+    #    output = in_name + ".bai"
+        
     tools = [bam_p]
-    process = utils.run_tools(tools, input=None, output=None, name="BAM-Index")
-    if process.wait() != 0:
+    
+    processOne = utils.run_tools(tools, input=None, output=None, name="BAM-Index")
+    if processOne.wait() != 0:
         raise ValueError("BAM indexing failed!")
+        
+    #bamBai = in_name + ".bam.bai"
+    #bamIndexRename = ['mv','-f',bamBai,output]
+    
+    #tools = [bamIndexRename]
+    
+    #processTwo = utils.run_tools(tools, input=None, output=None, name="BAM-Index-Rename")
+    #if processTwo.wait() != 0:
+    #    raise ValueError("BAM indexing rename failed!")
+    
     return output
 
 

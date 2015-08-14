@@ -54,8 +54,8 @@ i3 bundle. Otherwise use core2.
 
 The latest release can be downloaded here:
 
-* [GEM-Tools static binary bundle 1.7.1 for i3](http://barnaserver.com/gemtools/releases/GEMTools-static-i3-1.7.1.tar.gz)
-* [GEM-Tools static binary bundle 1.7.1 for core2](http://barnaserver.com/gemtools/releases/GEMTools-static-core2-1.7.1.tar.gz)
+* [GEM-Tools static binary bundle 1.7.2 for i3](http://barnaserver.com/gemtools/releases/GEMTools-static-i3-1.7.2.tar.gz)
+* [GEM-Tools static binary bundle 1.7.2 for core2](http://barnaserver.com/gemtools/releases/GEMTools-static-core2-1.7.2.tar.gz)
 
 Library distribution
 --------------------
@@ -207,6 +207,10 @@ the [GEM bugtracker](http://algorithms.cnag.cat/mantis).
 
 Change log
 =====================
+    1.7.2
+    - Fixed issue with BAM indexing when using samtools 1.X
+    - Changed http server providers of the gem binaries 
+
     1.7.1
     - Fixed issue with fasta files where no qualities are provided
     - Fixed issue with cutom output folder in the RNA-Pipeline and where
